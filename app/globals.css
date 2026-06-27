@@ -1,0 +1,62 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-satoshi: 'Satoshi', system-ui, sans-serif;
+  --font-archivo: 'Archivo Black', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0807;
+  color: #F4EDE3;
+  font-family: var(--font-satoshi);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: #FF2DA0;
+  color: #0a0807;
+}
+
+@layer components {
+  .container-narrow {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-flame px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-ink transition-colors hover:bg-acid;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-bone/20 px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-bone transition-colors hover:border-acid hover:text-acid;
+  }
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.3em];
+  }
+  .display {
+    font-family: var(--font-archivo);
+    @apply uppercase leading-[0.95] tracking-tightest;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0807;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a322c;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5A1F;
+}
